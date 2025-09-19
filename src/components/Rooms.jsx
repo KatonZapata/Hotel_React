@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { use } from 'react'
 import BanerForm from './form'
 import Room from './Room'
-
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export default function Rooms() {
+
+
+  let[roomsApi,setRoomsApi] = useState([]);
+
+  async function getRooms() {
+   try {
+    let respuesta = await axios.get("http://localhost:3000/api/habitaciones");
+    //console.log('respuesta api', respuesta.data);
+    setRoomsApi(respuesta.data);
+    
+    
+   } catch (error) {
+    console.log(error);
+    
+   } 
+  }
+   console.log(roomsApi);
+   
+
+  useEffect(() => {
+    getRooms();
+  }, []) 
+
   return (
     <>
         
@@ -20,9 +44,9 @@ export default function Rooms() {
 
     <div className="w3-row-padding w3-padding-16">
 
-        <Room />
-        <Room />
-        <Room />
+        {roomsApi.map((room) => (
+          <Room key={room.id} dataRoom={room} />
+        ))}
     </div>
 
     </>

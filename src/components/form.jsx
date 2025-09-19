@@ -17,11 +17,11 @@ export default function BanerForm() {
                 <div className="w3-row-padding" style={{ margin: "8px -16px" }}>
                 <div className="w3-half w3-margin-bottom">
                     <label><i className="fa fa-male"></i> Adults</label>
-                    <input className="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6" />
+                    <input className="w3-input w3-border" type="number" defaultValue="1"  name="Adults" min="1" max="6" />
                 </div>
                 <div className="w3-half">
                     <label><i className="fa fa-child"></i> Kids</label>
-                <input className="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6" />
+                <input className="w3-input w3-border" type="number" defaultValue="0"  name="Kids" min="0" max="6" />
                 </div>
                 </div>
                 <button className="w3-button w3-dark-grey" type="submit"><i className="fa fa-search w3-margin-right"></i> Search availability</button>

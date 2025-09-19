@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      <Menu />
-      <div className="w3-content" style={{"max-width":"1900px"}}>
+      <div className="w3-content" style={{"maxWidth":"1900px"}}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Rooms" element={<RoomPage />} />
