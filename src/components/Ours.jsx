@@ -17,7 +17,7 @@ export default function Ours() {
             </div>
             </div>
             <div className="w3-half">
-            <div className="w3-row-padding" style={{ margin: 0 - 16 }}>
+            <div className="w3-row-padding" style={{ margin:'0 - 16'}}>
                 <div className="w3-half w3-margin-bottom">
                 <div className="w3-display-container">
                     <img src="https://www.w3schools.com/w3images/newyork2.jpg" alt="New York" style={{ width: "100%" }}/>
@@ -31,7 +31,7 @@ export default function Ours() {
                 </div>
                 </div>
             </div>
-            <div className="w3-row-padding" style={{ margin: 0 - 16 }}>
+            <div className="w3-row-padding" style={{ margin: ' 0 - 16' }}>
                 <div className="w3-half w3-margin-bottom">
                 <div className="w3-display-container">
                     <img src="https://www.w3schools.com/w3images/pisa.jpg" alt="Pisa" style={{ width: "100%" }}/>
