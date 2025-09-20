@@ -1,0 +1,53 @@
+###peticion get - todas las Habitaciones
+get http://localhost:3000/api/habitaciones
+
+###peticion get - una Habitacion con sus imagenes
+get http://localhost:3000/api/habitaciones/3
+
+###peticion post - crear una habitacion
+Post http://localhost:3000/api/habitaciones
+Content-Type: application/json
+
+{
+    "numero_habitacion": 303,
+    "tipo": "Room Deluxe",
+    "descripcion": "Suite de lujo con jacuzzi y vista a la ciudad",
+    "precio": 250.00,
+    "capacidad": 2,
+    "metros_cuadrados": 40,
+    "amenidades": "WiFi, TV, Jacuzzi, Aire acondicionado, Balcón",
+    "estado": "disponible" 
+}
+
+###peticion put - Actualizar una habitacion
+Put http://localhost:3000/api/habitaciones/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "numero_habitacion": 303,
+    "tipo": "Room Deluxe",
+    "descripcion": "Suite de lujo con jacuzzi y vista a la ciudad",
+    "precio": 250.00,
+    "capacidad": 2,
+    "metros_cuadrados": 40,
+    "amenidades": "WiFi, TV, Jacuzzi, Aire acondicionado, Balcón",
+    "estado": "disponible" 
+}
+
+###peticion delete - eliminar una habitacion
+DELETE http://localhost:3000/api/habitaciones/1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+###peticion post - verificar un usuario
+Post http://localhost/apiCrud/login
+Content-Type: application/json
+
+{
+    "usuario": "admin",
+    "contrasena": "admin12345"
+}
