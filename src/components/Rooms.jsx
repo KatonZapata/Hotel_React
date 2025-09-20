@@ -10,20 +10,19 @@ export default function Rooms() {
   let[roomsApi,setRoomsApi] = useState([]);
 
   async function getRooms() {
-   try {
-    let respuesta = await axios.get("http://localhost:3000/api/habitaciones");
-    //console.log('respuesta api', respuesta.data);
-    setRoomsApi(respuesta.data);
-    
-    
-   } catch (error) {
-    console.log(error);
-    
-   } 
+    try {
+      let respuesta = await axios.get("http://localhost:3000/api/habitaciones");
+      //console.log('respuesta api', respuesta.data);
+      setRoomsApi(respuesta.data);
+      
+      
+    } catch (error) {
+      console.log(error);
+      
+    } 
   }
-   console.log(roomsApi);
-   
-
+  console.log("rooms data",roomsApi);
+  
   useEffect(() => {
     getRooms();
   }, []) 

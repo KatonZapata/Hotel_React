@@ -1,9 +1,36 @@
 import { useParams } from "react-router-dom"
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
+import { useEffect, useState, useRef, } from "react"
+import axios from "axios"
 
 export default function InfoRoomPage() {
   const { id } = useParams();
+  
+  let[roomsApi,setRoomsApi] = useState([]);
+  let[loading,setLoading] = useState(true);
+
+  async function getRooms() {
+    try {
+      let respuesta = await axios.get("http://localhost:3000/api/habitaciones/"+id);
+      //console.log('respuesta api', respuesta.data);
+      setRoomsApi(respuesta.data);
+      
+      
+    } catch (error) {
+      console.log(error);
+      
+    } finally{
+      setLoading(false)
+    }
+  }
+  console.log("rooms data",roomsApi);
+  
+  useEffect(() => {
+    getRooms();
+  }, []) 
+
+  let {imagenes, descripcion} = roomsApi
   
   return (
 
@@ -13,7 +40,8 @@ export default function InfoRoomPage() {
           <div className='w3-row-padding'>
             <div className="w3-half">
               <h2 className="w3-text-green">The Apartment #{id}</h2>
-              <img src="https://www.w3schools.com/w3images/livingroom.jpg" style={{"width":"100%",'marginBottom':'-6px'}}/>
+              <p>{descripcion}</p>
+              <img src={imagenes} style={{"width":"100%",'marginBottom':'-6px'}}/>
            </div>
              
           <div className="w3-half">
